@@ -137,3 +137,5 @@ venv.bak/
 
 # mkdocs documentation
 /site
+
+sampledata/

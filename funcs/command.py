@@ -35,4 +35,22 @@ parser.add_argument(
     - *Type:* String
     - *Required:* Yes
     """
-    )
+)
+
+parser.add_argument(
+    "-o", "--output_dir", default=".", help="""
+    Optional Arguments:
+
+    -o, --output_dir
+    Output directory for generated RST files. Defaults to the current 
+    working directory if not provided.
+    """
+)
+
+def get_file_name(file: str) -> str:
+
+    return file.split("/")[-1].split(".")[0]
+
+def get_extension(file: str) -> str:
+
+    return file.split(".")[-1].lower()

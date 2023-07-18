@@ -1,4 +1,4 @@
-from csv2rst.csv2rst import Table
+from toRST.toRST import Table
 import pytest
 
 

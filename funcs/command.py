@@ -50,7 +50,3 @@ parser.add_argument(
 def get_file_name(file: str) -> str:
 
     return file.split("/")[-1].split(".")[0]
-
-def get_extension(file: str) -> str:
-
-    return file.split(".")[-1].lower()

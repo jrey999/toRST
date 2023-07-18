@@ -13,10 +13,8 @@ Convert various data formats to reStructuredText tables.
 **Planned formats**:
 
 
-- Excel
-<br>
-<br>
-<br>
+- Excel<br><br>
+
 **Usage Cli**
 -------------
 example<br>

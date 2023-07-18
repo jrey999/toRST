@@ -15,6 +15,12 @@ Convert various data formats to reStructuredText tables.
 
 - Excel<br><br>
 
+**installation**
+[PyPI](https://pypi.org/project/toRST/0.0.1/)<br>
+```bash
+pip install toRST
+```<br>
+
 **Usage Cli**
 -------------
 example<br>

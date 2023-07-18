@@ -1,5 +1,5 @@
-=====br
-toRST
+=====
+<br>toRST
 =====
 
 Convert various data formats to reStructuredText tables.

@@ -16,7 +16,7 @@ Convert various data formats to reStructuredText tables.
 - Excel
 **Usage Cli**
 -------------
-example
+example<br>
   Convert file1.csv and file2.json into RST
 ```bash
 torst file.csv file.json -o ./outputfolder

@@ -36,7 +36,7 @@ class Table:
     """
         column_widths = {}
         for index in range(int(len(self.headers))):
-            max_width = max([len(row[index]) for row in self.data])
+            max_width = max([len(str(row[index])) for row in self.data])
             column_widths[index] = max_width if max_width > len(self.headers[index]) else len(self.headers[index])
         return column_widths
 
@@ -77,6 +77,6 @@ class Table:
             rst_row=""
             for index, cell in enumerate(row):
                 column_width = self.column_widths[index]
-                rst_row += "|" + (cell + " " * (column_width - len(cell)))
+                rst_row += "|" + (str(cell) + " " * (column_width - len(str(cell))))
             table += [rst_row + "|"]
         return table + [self.page_info["new_line"]]

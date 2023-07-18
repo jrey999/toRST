@@ -19,7 +19,8 @@ Convert various data formats to reStructuredText tables.
 [PyPI](https://pypi.org/project/toRST/0.0.1/)<br>
 ```bash
 pip install toRST
-```<br>
+```
+<br>
 
 **Usage Cli**
 -------------

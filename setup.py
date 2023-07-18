@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+
 readme = """
 Command line tool for converting CSV and JSON files into reStructuredText Tables.
 """.strip()

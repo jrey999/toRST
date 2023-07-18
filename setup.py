@@ -4,6 +4,8 @@ readme = """
 Command line tool for converting CSV and JSON files into reStructuredText Tables.
 """.strip()
 
+with open('LICENSE') as f:
+    license = f.read()
 setup(
     name='toRST',
     version='0.0.1',
@@ -12,6 +14,7 @@ setup(
     author='John Reynolds',
     author_email='reynoldsjohngreg@gmail.com',
     url='https://github.com/jrey999/toRST',
+    license=license,
     packages=find_packages(exclude=('tests',)),
     entry_points={
         'console_scripts': [

@@ -72,7 +72,7 @@ class Table:
         :rtype: list[str]
         """
         table = [
-            self.page_info["header"],
+            self.page_info["new_line"],
             "|" + ("|".join([str(cell) + " " * (self.column_widths[index] - len(str(cell))) for index, cell in enumerate(self.data[0])])) + "|",
             self.page_info["header"]
             ]
@@ -83,4 +83,4 @@ class Table:
                 column_width = self.column_widths[index]
                 rst_row += "|" + (str(cell) + " " * (column_width - len(str(cell))))
             table += [rst_row + "|"] + [self.page_info["new_line"]]
-        return table + [self.page_info["new_line"]]
+        return table

@@ -11,6 +11,7 @@ def torst():
         
         for line in Table(file).build_table():
             f.writelines(line + "\n")
+        f.close()
 
 if __name__ == "__main__":
     torst()

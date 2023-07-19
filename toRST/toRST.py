@@ -56,7 +56,8 @@ class Table:
         return {
             "num_columns": len(self.headers),
             "page_wdith": sum(self.column_widths.values()),
-            "new_line": "".join(["+" + column_width * "=" for column_width in self.column_widths.values()]) + "+"
+            "header": "".join(["+" + column_width * "=" for column_width in self.column_widths.values()]) + "+",
+            "new_line": "".join(["+" + column_width * "-" for column_width in self.column_widths.values()]) + "+"
         }
     
     def build_table(self) -> list[str]:
@@ -70,13 +71,16 @@ class Table:
         :returns: A list of table lines
         :rtype: list[str]
         """
-        table = []
-        for row in self.data:
+        table = [
+            self.page_info["header"],
+            "|" + ("|".join([str(cell) + " " * (self.column_widths[index] - len(str(cell))) for index, cell in enumerate(self.data[0])])) + "|",
+            self.page_info["header"]
+            ]
+        for row in self.data[1:]:
             
-            table += [self.page_info["new_line"]]
             rst_row=""
             for index, cell in enumerate(row):
                 column_width = self.column_widths[index]
                 rst_row += "|" + (str(cell) + " " * (column_width - len(str(cell))))
-            table += [rst_row + "|"]
+            table += [rst_row + "|"] + [self.page_info["new_line"]]
         return table + [self.page_info["new_line"]]

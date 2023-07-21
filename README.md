@@ -29,20 +29,6 @@ example<br>
 ```bash
 torst file1.csv file2.json -o ./outputfolder
 ```
-
-**Python Usage**
--------------
-example<br>
-  
-Import Table class
-```python
-from toRST.toRST import Table
-```
-Convert file1.csv into RST string
-```python
-rst_table = Table('file1').build_table()
-```
-
 **Positional Arguments**:
 ------------------------
 
@@ -56,6 +42,19 @@ inputs
 -o, --output_dir
   Output directory for generated RST files. Defaults to the current 
   working directory if not provided.
+
+**Python Usage**
+-------------
+example<br>
+  
+Import Table class
+```python
+from toRST.toRST import Table
+```
+Convert file1.csv into RST string
+```python
+rst_table = Table('file1').build_table()
+```
 
 **What toRST was built for**
 ----------------------------

@@ -33,19 +33,6 @@ example<br>
 torst file1.csv file2.json -o ./outputfolder
 ```
 
-**Python Usage**
--------------
-example<br>
-  
-Import Table class
-```python
-from toRST.toRST import Table
-```
-Convert file1.csv into RST string
-```python
-rst_table = Table('file1').build_table()
-```
-
 **Positional Arguments**:
 ------------------------
 
@@ -59,13 +46,26 @@ inputs
 -o, --output_dir
   Output directory for generated RST files. Defaults to the current 
   working directory if not provided.
+
+**Python Usage**
+-------------
+example<br>
+  
+Import Table class
+```python
+from toRST.toRST import Table
+```
+Convert file1.csv into RST string
+```python
+rst_table = Table('file1').build_table()
+```
 """.strip()
 
 with open('LICENSE') as f:
     license = f.read()
 setup(
     name='toRST',
-    version='0.0.5',
+    version='0.0.6',
     description='Command line tool for converting CSV and JSON files into reStructuredText Tables.',
     long_description=readme,
     author='John Reynolds',

@@ -56,8 +56,8 @@ class Table:
         return {
             "num_columns": len(self.headers),
             "page_wdith": sum(self.column_widths.values()),
-            "header": "".join(["+" + column_width * "=" for column_width in self.column_widths.values()]) + "+",
-            "new_line": "".join(["+" + column_width * "-" for column_width in self.column_widths.values()]) + "+"
+            "header": "+{}+".format("+".join([column_width * "=" for column_width in self.column_widths.values()])),
+            "new_line": "+{}+".format("+".join([column_width * "-" for column_width in self.column_widths.values()]))
         }
     
     def build_table(self) -> list[str]:

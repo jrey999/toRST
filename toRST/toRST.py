@@ -73,14 +73,13 @@ class Table:
         """
         table = [
             self.page_info["new_line"],
-            "|" + ("|".join([str(cell) + " " * (self.column_widths[index] - len(str(cell))) for index, cell in enumerate(self.data[0])])) + "|",
+            "|{}|".format("|".join([str(cell) + " " * (self.column_widths[index] - len(str(cell))) for index, cell in enumerate(self.data[0])])),
             self.page_info["header"]
             ]
         for row in self.data[1:]:
             
-            rst_row=""
+            rst_row=[]
             for index, cell in enumerate(row):
-                column_width = self.column_widths[index]
-                rst_row += "|" + (str(cell) + " " * (column_width - len(str(cell))))
-            table += [rst_row + "|"] + [self.page_info["new_line"]]
+                rst_row += [str(cell) + " " * (self.column_widths[index] - len(str(cell)))]
+            table += ["|{}|".format("|".join(rst_row))] + [self.page_info["new_line"]]
         return "\n".join(table)

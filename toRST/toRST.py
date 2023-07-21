@@ -82,4 +82,5 @@ class Table:
             for index, cell in enumerate(row):
                 rst_row += [str(cell) + " " * (self.column_widths[index] - len(str(cell)))]
             table += ["|{}|".format("|".join(rst_row))] + [self.page_info["new_line"]]
-        return "\n".join(table)
+        table = "\n".join(table)
+        return table

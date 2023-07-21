@@ -1,7 +1,20 @@
 import csv
 
 
-def from_csv(file) -> list[list]:
+def clean_csv(data: list[list]):
+    """
+    Removes trailing empty strings from CSVs that ovvur when extra commas exist
+    
+    :param data: list of lists returned from from_csv function
+    :type data: list of lists
+    :rtype: list[list]
+    """
+    while data[0][-1] == "":
+        for _ in data:
+            _.pop()
+    return data
+
+def from_csv(file: str) -> list[list]:
 
     """
     Read CSV file into a list of lists.
@@ -16,7 +29,8 @@ def from_csv(file) -> list[list]:
     :rtype: list[list]
     """
 
-    with open(file, mode="r") as f:
+    with open(file) as f:
+
         csv_file = csv.reader(f)
-        data=[row for row in csv_file]
-    return data
+        data = [row for row in csv_file]
+    return clean_csv(data)

@@ -65,7 +65,7 @@ with open('LICENSE') as f:
     license = f.read()
 setup(
     name='toRST',
-    version='0.0.7',
+    version='0.0.8',
     description='Command line tool for converting CSV and JSON files into reStructuredText Tables.',
     long_description=readme,
     author='John Reynolds',

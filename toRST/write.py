@@ -9,8 +9,7 @@ def torst():
 
     with open(f"{args.output_dir}/{get_file_name(file)}.rst", "w") as f:
         
-        for line in Table(file).build_table():
-            f.writelines(line + "\n")
+        f.write(Table(file).build_table())
         f.close()
 
 if __name__ == "__main__":

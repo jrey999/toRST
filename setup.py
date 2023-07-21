@@ -20,18 +20,30 @@ Convert various data formats to reStructuredText tables.
 - Excel<br><br>
 
 **installation**
-[PyPI](https://pypi.org/project/toRST/0.0.1/)<br>
 ```bash
 pip install toRST
 ```
 <br>
 
-**Usage Cli**
+**CLI Usage**
 -------------
 example<br>
   Convert file1.csv and file2.json into RST
 ```bash
 torst file1.csv file2.json -o ./outputfolder
+```
+
+**Python Usage**
+-------------
+example<br>
+  
+Import Table class
+```python
+from toRST.toRST import Table
+```
+Convert file1.csv into RST string
+```python
+rst_table = Table('file1').build_table()
 ```
 
 **Positional Arguments**:
@@ -53,7 +65,7 @@ with open('LICENSE') as f:
     license = f.read()
 setup(
     name='toRST',
-    version='0.0.4',
+    version='0.0.5',
     description='Command line tool for converting CSV and JSON files into reStructuredText Tables.',
     long_description=readme,
     author='John Reynolds',

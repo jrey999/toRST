@@ -83,4 +83,4 @@ class Table:
                 column_width = self.column_widths[index]
                 rst_row += "|" + (str(cell) + " " * (column_width - len(str(cell))))
             table += [rst_row + "|"] + [self.page_info["new_line"]]
-        return table
+        return "\n".join(table)

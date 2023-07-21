@@ -22,12 +22,25 @@ pip install toRST
 ```
 <br>
 
-**Usage Cli**
+**CLI Usage**
 -------------
 example<br>
   Convert file1.csv and file2.json into RST
 ```bash
 torst file1.csv file2.json -o ./outputfolder
+```
+
+**Python Usage**
+-------------
+example<br>
+  
+Import Table class
+```python
+from toRST.toRST import Table
+```
+Convert file1.csv into RST string
+```python
+rst_table = Table('file1').build_table()
 ```
 
 **Positional Arguments**:

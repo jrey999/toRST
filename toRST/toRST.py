@@ -1,17 +1,6 @@
-from funcs.funcs import get_extension
-from csv2rst.csv2rst import from_csv
-from json2rst.json2rst import from_json
+from funcs.funcs import get_extension, handle_file
 
 
-def handle_file(file: str) -> list[list]:
-
-    extension = get_extension(file)
-    if extension == "csv":
-        return from_csv(file)
-    elif extension == "json":
-        return from_json(file)
-    else:
-        raise ValueError(f"{extension} files not currently supported")
 class Table:
 
     def __init__(self, file) -> None:
@@ -20,8 +9,6 @@ class Table:
         self.headers = self.data[0]
         self.column_widths = self.get_column_widths()
         self.page_info = self.get_page_info()
-
-    
 
     def get_column_widths(self) -> dict[int, int]:
         """
@@ -82,5 +69,4 @@ class Table:
             for index, cell in enumerate(row):
                 rst_row += [str(cell) + " " * (self.column_widths[index] - len(str(cell)))]
             table += ["|{}|".format("|".join(rst_row))] + [self.page_info["new_line"]]
-        table = "\n".join(table)
-        return table
+        return "\n".join(table)

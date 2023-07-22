@@ -59,14 +59,14 @@ Convert file1.csv into RST string
 ```python
 rst_table = Table('file1.csv').build_table()
 ```
-Can also convert list of lists or list of dicts into RST by passing the object into ```Table``` class
+Can also convert ```list[list or tuple or dict]``` into RST by passing the object into the ```Table``` class<br> 
 """.strip()
 
 with open('LICENSE') as f:
     license = f.read()
 setup(
     name='toRST',
-    version='0.0.9',
+    version='0.1.0',
     description='Command line tool for converting CSV and JSON files into reStructuredText Tables.',
     long_description=readme,
     author='John Reynolds',

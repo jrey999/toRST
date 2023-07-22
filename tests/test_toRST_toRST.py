@@ -39,8 +39,8 @@ def test_handle_raw() -> None:
 
     with pytest.raises(ValueError) as value_error:
         handle_raw({"key1": "value1", "key2": "value2"})
-    assert str(value_error.value) == "input must be of type list[list] or list[dict]"
+    assert str(value_error.value) == "input must be of type list[list or dict or tuple]"
 
     with pytest.raises(ValueError) as value_error:
         handle_raw(["value", "value", "value", "value"])
-    assert str(value_error.value) == "input must be of type list[list] or list[dict]"
+    assert str(value_error.value) == "input must be of type list[list or dict or tuple]"

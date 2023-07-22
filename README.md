@@ -1,4 +1,4 @@
-=====
+==========================================================================================
 <br>toRST
 =====
 
@@ -16,7 +16,7 @@ Convert various data formats to reStructuredText tables.
 - Excel<br><br>
 
 **installation**
-[PyPI](https://pypi.org/project/toRST/0.0.1/)<br>
+[PyPI](https://pypi.org/project/toRST/)<br>
 ```bash
 pip install toRST
 ```
@@ -53,7 +53,7 @@ from toRST.toRST import Table
 ```
 Convert file1.csv into RST string
 ```python
-rst_table = Table('file1').build_table()
+rst_table = Table('file1.csv').build_table()
 ```
 
 **What toRST was built for**

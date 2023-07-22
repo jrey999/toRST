@@ -1,4 +1,6 @@
 from toRST.toRST import Table
+from csv2rst.csv2rst import clean_csv
+from funcs.funcs import handle_raw
 import pytest
 
 
@@ -28,3 +30,17 @@ def test_column_widths(empty_table, large_table, small_table) -> None:
     assert empty_table.column_widths[0] == len("No")
     assert large_table.column_widths[1] == len("Livingston")
     assert small_table.column_widths[2] == len("Header3")
+
+def test_clean_csv() -> None:
+
+    assert clean_csv([["ab", "cd", "ef", "gh", "", ""], ["ba", "dc", "fe", "hg", "", ""]]) == [["ab", "cd", "ef", "gh"], ["ba", "dc", "fe", "hg"]]
+
+def test_handle_raw() -> None:
+
+    with pytest.raises(ValueError) as value_error:
+        handle_raw({"key1": "value1", "key2": "value2"})
+    assert str(value_error.value) == "input must be of type list[list] or list[dict]"
+
+    with pytest.raises(ValueError) as value_error:
+        handle_raw(["value", "value", "value", "value"])
+    assert str(value_error.value) == "input must be of type list[list] or list[dict]"

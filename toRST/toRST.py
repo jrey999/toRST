@@ -1,11 +1,11 @@
-from funcs.funcs import get_extension, handle_file
+from funcs.funcs import handle_file, handle_raw
 
 
 class Table:
 
-    def __init__(self, file) -> None:
+    def __init__(self, input) -> None:
         
-        self.data = handle_file(file)
+        self.data = handle_file(input) if isinstance(input, str) else handle_raw(input)
         self.headers = self.data[0]
         self.column_widths = self.get_column_widths()
         self.page_info = self.get_page_info()

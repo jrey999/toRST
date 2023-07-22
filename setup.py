@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 readme = """
-==========================================================================================
+==========================================================
 <br>toRST
 =====
 
@@ -57,8 +57,9 @@ from toRST.toRST import Table
 ```
 Convert file1.csv into RST string
 ```python
-rst_table = Table('file1').build_table()
+rst_table = Table('file1.csv').build_table()
 ```
+Can also convert list of lists or list of dicts into RST by passing the object into ```Table``` class
 """.strip()
 
 with open('LICENSE') as f:

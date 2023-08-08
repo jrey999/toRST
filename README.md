@@ -27,7 +27,7 @@ pip install toRST
 example<br>
   Convert file1.csv and file2.json into RST
 ```bash
-torst file1.csv file2.json -o ./outputfolder
+torst file1.csv file2.json -o /outputfolder
 ```
 **Positional Arguments**:
 ------------------------

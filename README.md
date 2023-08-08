@@ -55,7 +55,7 @@ Convert file1.csv into RST string
 ```python
 rst_table = Table('file1.csv').build_table()
 ```
-Can also convert ```list[list or tuple or dict]``` into RST by passing the object into the ```Table``` class<br> 
+Can also convert ```python list[list or tuple or dict] and dict[str, list``` into RST by passing the object into the ```Table``` class<br> 
 
 **What toRST was built for**
 ----------------------------

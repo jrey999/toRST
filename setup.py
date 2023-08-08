@@ -30,7 +30,7 @@ pip install toRST
 example<br>
   Convert file1.csv and file2.json into RST
 ```bash
-torst file1.csv file2.json -o ./outputfolder
+torst file1.csv file2.json -o /outputfolder
 ```
 
 **Positional Arguments**:
@@ -59,14 +59,14 @@ Convert file1.csv into RST string
 ```python
 rst_table = Table('file1.csv').build_table()
 ```
-Can also convert ```list[list or tuple or dict]``` into RST by passing the object into the ```Table``` class<br> 
+Can also convert ```list[list or tuple or dict] and dict[str, list]``` into RST by passing the object into the ```Table``` class<br> 
 """.strip()
 
 with open('LICENSE') as f:
     license = f.read()
 setup(
     name='toRST',
-    version='0.1.0',
+    version='0.1.1',
     description='Command line tool for converting CSV and JSON files into reStructuredText Tables.',
     long_description=readme,
     author='John Reynolds',

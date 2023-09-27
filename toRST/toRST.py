@@ -6,7 +6,7 @@ class Table:
     def __init__(self, input) -> None:
         
         self.data = handle_file(input) if isinstance(input, str) else handle_raw(input)
-        self.headers = self.data[0]
+        self.headers = [str(column_header) for column_header in self.data[0]]
         self.column_widths = self.get_column_widths()
         self.page_info = self.get_page_info()
 

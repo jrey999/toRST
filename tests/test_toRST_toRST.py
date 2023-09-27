@@ -46,6 +46,10 @@ def test_handle_raw() -> None:
         handle_raw(["value", "value", "value", "value"])
     assert str(value_error.value) == "input must be of type list[list or dict or tuple] or dict[str, list]"
 
+def test_int_headers() -> None:
+
+    assert Table([[1, 2, 3], [4, 5, 6], [7, 8, 9]]).headers == ["1", "2", "3"]
+
 def test_from_list_values() -> None:
     data = json.load(open("tests/data/list_values.json"))
     assert from_list_values(data) == [

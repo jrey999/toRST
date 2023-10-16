@@ -1,6 +1,6 @@
 from toRST.toRST import Table
-from csv2rst.csv2rst import clean_csv
-from json2rst.json2rst import from_list_values
+from formats.csv2rst import clean_csv
+from formats.json2rst import from_list_values
 from funcs.funcs import handle_raw
 import pytest, json
 

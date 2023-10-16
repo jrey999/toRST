@@ -1,5 +1,5 @@
-from csv2rst.csv2rst import from_csv
-from json2rst.json2rst import from_json, from_list_values
+from formats.csv2rst import from_csv
+from formats.json2rst import from_json, from_list_values
 
 
 def get_extension(file: str) -> str:

@@ -16,7 +16,7 @@ def handle_file(file: str) -> list[list]:
     else:
         raise ValueError(f"{extension} files not currently supported")
 
-def handle_raw(input: list[list | dict]) -> list[list]:
+def handle_raw(input: list) -> list[list]:
 
     if not isinstance(input, list) or isinstance(input, dict):
         raise ValueError("input must be of type list[list or dict or tuple] or dict[str, list]")

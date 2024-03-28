@@ -27,7 +27,7 @@ class Table:
             column_widths[index] = max_width if max_width > len(self.headers[index]) else len(self.headers[index])
         return column_widths
 
-    def get_page_info(self) -> dict[str, int or str]:
+    def get_page_info(self) -> dict:
         """
         Get formatting information for the reST page.
 
